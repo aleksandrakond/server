@@ -1,0 +1,114 @@
+<html lang="ru">
+<head>
+</head>  
+<body> 
+<?php
+ //num_1_2
+ $Color = "red";
+ $x = 'Привет, ';
+ $y = 'Мир!';
+ echo '<div style="Color:'.$Color.'">'.$x. $y.'</div>';
+
+ 
+ echo '<br>';
+//num_5
+ $n = 3;
+ $m = 5;
+echo '<table border="1">';
+for($i=0;$i<$n;$i++){
+    echo'<tr>';  
+
+for($j=0;$j<$m;$j++){
+    echo'<td>'.$j.'</td>';}
+echo'</tr>';
+
+}
+echo'</table>';
+echo '<br>';
+//num_6
+function maketable($n,$m){
+    echo '<table border="1">';
+    for($i=0;$i<$n;$i++){
+        
+        echo'<tr>';  
+    
+    for($j=0;$j<$m;$j++){
+        echo'<td>'.$j.'</td>';
+    }
+    echo'</tr>';    
+}
+echo'</table>';
+}
+echo maketable(4,6);
+
+echo '<br>';
+//num_7
+function changessizeoftext($text, $size){
+    echo '<font size = "'.$size.'">'.$text.'</font>';
+
+}
+echo changessizeoftext("Привет, мир!",200);
+
+echo '<br>';
+//num_8
+$numberarray = array(1,2,3,4);
+$typearray = array("Птицы","Звери","Насекомые","Рыбы");
+$namearray = array("Голубь, Синица, Воробец",
+"Капибара, Слон, Бегемот",
+"Божья коровка, Муравей, Оса",
+"Тунец, Рыба-капля, Сазан");
+$array =array($numberarray,$typearray,$namearray);
+function createtable($arr){
+    echo '<table border="1">';
+    for($i=0;$i < count($arr);$i++){
+        
+        echo'<tr>';  
+    
+    for($j=0;$j< count($arr[$i]);$j++){
+        echo'<td>'.$arr[$i][$j].'</td>';
+    }
+    echo'</tr>';    
+}
+echo'</table>';
+}
+echo createtable($array);
+echo '<br>';
+//num_9
+$n = 3;
+$m = 4;
+function maketable_2($n,$m){
+    echo '<table border="1">';
+    if($_POST['add']=='addstr'){
+        $n++;
+    }
+    else if($_POST['del']=='delstr'){
+        $n--; 
+    }
+    else if($_POST['add']=='addcol'){
+        $m++; 
+    }
+    else if($_POST['del']=='delcol'){
+        $m--; 
+    }
+    for($i=0;$i<$n;$i++){
+        
+        echo'<tr>';  
+    
+    for($j=0;$j<$m;$j++){
+        echo'<td>'.$j.'</td>';
+    }
+    echo'</tr>';    
+}
+echo'</table>';
+}
+echo maketable_2($n,$m);
+
+
+?>
+
+<br>
+ <font color = <?php echo htmlspecialchars($_GET["color"])?> >
+ <?php echo $x.$y?>
+</font>
+</body>
+</html>
